@@ -13,7 +13,7 @@
   "scripts": { "build": "node build.mjs", "watch": "node build.mjs --watch" },
   "dependencies": { "@deepseek-ai/schemastery": "^3.18.4" },
   "devDependencies": { "esbuild": "^0.25.0" },
-  "keywords": ["dsh", "deepseek-harness", "dsH-plugin", "provider", "model", "openai-compatible"],
+  "keywords": ["dsh", "deepseek-harness", "dsh-plugin", "deepseek", "provider", "model", "openai-compatible"],
   "license": "MIT",
   "repository": { "type": "git", "url": "git+https://github.com/66wjz/dsh-model-cap.git" },
   "dsh": {
