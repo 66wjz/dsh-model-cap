@@ -1,0 +1,4 @@
+# dsh-model-cap bundle patch: 模型能力配置（宿主侧命名空间注册）。
+- insert:
+    - id: dsh-model-cap
+      name: 'dsh-model-cap'

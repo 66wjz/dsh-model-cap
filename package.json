@@ -1,0 +1,24 @@
+{
+  "name": "dsh-model-cap",
+  "version": "0.5.0",
+  "description": "DSH 提供商与模型高级管理台：设置页独立导航「提供商配置」，管理提供商（地址/协议/Key 凭据）与模型（增删改/拉取/批量删除/识图声明/推理档位/拖动排序/连通测试），直写 llm-pi-ai 命名空间热生效。自包含：模板组件已内联，无外部依赖。",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": ["index.js", "lib", "cordis.patch.yml", "README.md", "LICENSE", "src", "vendor", "build.mjs"],
+  "scripts": { "build": "node build.mjs", "watch": "node build.mjs --watch" },
+  "dependencies": { "@deepseek-ai/schemastery": "^3.18.4" },
+  "devDependencies": { "esbuild": "^0.25.0" },
+  "keywords": ["dsh", "deepseek-harness", "dsH-plugin", "provider", "model", "openai-compatible"],
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/66wjz/dsh-model-cap.git" },
+  "dsh": {
+    "engines": { "dsh": ">=0.2.0-rc.1" },
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": { "platform": "web" }
+  }
+}
