@@ -176,4 +176,28 @@ export const dpkStyle = `
   .dpk-searchinput input { width:100%; height:26px; box-sizing:border-box; padding:0 8px 0 26px; border:1px solid var(--dpk-border2); border-radius:6px; font:inherit; font-size:12px; background:var(--dpk-bg); color:var(--dpk-text); }
   .dpk-searchinput input:focus { outline:none; border-color:var(--dpk-brand); }
   .dpk-searchinput-icon { position:absolute; left:8px; width:13px; height:13px; color:var(--dpk-text3); pointer-events:none; }
+  /* ---- 可搜索组合框 ComboBox（v0.7.0，additive：不改既有规则） ----
+     场景：40+ 项的长列表。原生 select 的弹出层由浏览器绘制，无法限高/搜索，必须自建。
+     弹出层挂 body + position:fixed，所以 z-index 要高于 toast(10010) 与 datepop(10020)。 */
+  .dpk-combo-trigger { display:flex; align-items:center; gap:6px; width:100%; box-sizing:border-box; height:var(--dpk-h-md); padding:0 7px; border:1px solid var(--dpk-border2); border-radius:var(--dpk-radius); background:var(--dpk-bg); color:var(--dpk-text); font:inherit; font-size:13px; text-align:left; cursor:pointer; }
+  .dpk-combo-trigger:hover { border-color:var(--dpk-brand); }
+  .dpk-combo-trigger:disabled { opacity:.6; cursor:not-allowed; }
+  .dpk-combo-triggertext { flex:1; min-width:0; display:flex; align-items:baseline; gap:6px; overflow:hidden; }
+  .dpk-combo-triggertext > span:first-child { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .dpk-combo-placeholder { color:var(--dpk-text3); }
+  .dpk-combo-caret { flex:none; width:13px; height:13px; color:var(--dpk-text3); }
+  .dpk-combo-desc { font-size:11px; color:var(--dpk-text3); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .dpk-combo-pop { position:fixed; z-index:10030; box-sizing:border-box; background:var(--dpk-bg); border:1px solid var(--dpk-border2); border-radius:var(--dpk-radius-lg); box-shadow:var(--dpk-shadow); display:flex; flex-direction:column; max-height:264px; font-family:var(--dpk-font); }
+  .dpk-combo-search { position:relative; display:flex; align-items:center; padding:7px 8px; border-bottom:1px solid var(--dpk-border); flex:none; }
+  .dpk-combo-search input { width:100%; box-sizing:border-box; height:26px; padding:0 8px 0 26px; border:1px solid var(--dpk-border2); border-radius:6px; background:var(--dpk-bg); color:var(--dpk-text); font:inherit; font-size:12px; }
+  .dpk-combo-search input:focus { outline:none; border-color:var(--dpk-brand); }
+  .dpk-combo-searchicon { position:absolute; left:16px; width:13px; height:13px; color:var(--dpk-text3); pointer-events:none; }
+  .dpk-combo-list { overflow-y:auto; padding:4px; flex:1; min-height:0; }
+  .dpk-combo-item { display:flex; flex-direction:column; gap:1px; padding:6px 8px; border-radius:6px; cursor:pointer; }
+  .dpk-combo-item:hover { background:var(--dpk-hover); }
+  .dpk-combo-item.on { background:var(--dpk-neutral-bg); }
+  .dpk-combo-item.disabled { opacity:.45; cursor:not-allowed; }
+  .dpk-combo-item.disabled:hover { background:transparent; }
+  .dpk-combo-itemlabel { font-size:12px; color:var(--dpk-text); }
+  .dpk-combo-empty { padding:14px 8px; text-align:center; font-size:12px; color:var(--dpk-text3); }
 `
